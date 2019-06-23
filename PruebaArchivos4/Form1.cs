@@ -15,9 +15,9 @@ namespace PruebaArchivos4
     {
         string fileName1 = string.Empty;
         string fileName2 = string.Empty;
-        string sourcePath = string.Empty;//@"C:\pruebaArchivos\TestFolder";
-        string targetPathNonDuplicated = string.Empty;// @"C:\pruebaArchivos\TestFolder\SubDir";
-        string targetPathDuplicated = string.Empty;// @"C:\pruebaArchivos\TestFolder\SubDir";
+        string sourcePath = string.Empty;
+        string targetPathNonDuplicated = string.Empty;
+        string targetPathDuplicated = string.Empty;
         private bool carpetaElegida = false;
 
         public Form1()
@@ -44,8 +44,7 @@ namespace PruebaArchivos4
                 carpetaElegida = true;
                 textBox1.Text = folderBrowserDialog1.SelectedPath;
             }
-        }
-        
+        }        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -58,7 +57,6 @@ namespace PruebaArchivos4
             {
                 return;
             }
-
 
             // Use Path class to manipulate file and directory paths.
             string sourceFile = Path.Combine(sourcePath, fileName1);
