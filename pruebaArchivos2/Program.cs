@@ -17,7 +17,7 @@ namespace pruebaArchivos2
 
         //https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-copy-delete-and-move-files-and-folders
         // Simple synchronous file copy operations with no user interface.
-        // To run this sample, first create the following directories and files:
+        // To run this sample, first create the following directories and files: //
         // C:\Users\Public\TestFolder
         // C:\Users\Public\TestFolder\test.txt
         // C:\Users\Public\TestFolder\SubDir\test.txt
