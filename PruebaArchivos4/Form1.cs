@@ -88,6 +88,7 @@ namespace PruebaArchivos4
                     fileName1 = Path.GetFileName(miArray[i]);
                     fileName2 = Path.GetFileName(miArray[j]);
 
+                    
                     int largo = fileName2.Length;
                     int inicio = fileName2.IndexOf("cop", StringComparison.CurrentCultureIgnoreCase) - 3;
                     int fin = fileName2.IndexOf(".");
