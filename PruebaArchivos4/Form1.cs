@@ -88,11 +88,13 @@ namespace PruebaArchivos4
                     fileName1 = Path.GetFileName(miArray[i]);
                     fileName2 = Path.GetFileName(miArray[j]);
 
-                    
+                   
+                    //COMPARACION CORRESPONDIENTE A LA APARICIÓN DE LA PALABRA "COP" (por "copia" o "copy") en el segundo nombre
                     int largo = fileName2.Length;
                     int inicio = fileName2.IndexOf("cop", StringComparison.CurrentCultureIgnoreCase) - 3;
                     int fin = fileName2.IndexOf(".");
-
+                    //si encuentra "cop", inicio es >=0. Sino, es -4
+                  
                     if (inicio > 0)
                     {
                         string nombreTemp = fileName2.Remove(inicio, fin - inicio);
@@ -105,13 +107,19 @@ namespace PruebaArchivos4
                         }
                     }
 
+                    //COMPARACION CORRESPONDIENTE A LA APARICIÓN DEL SIMBOLO "(" y ")" en el segundo nombre
                     //tomo el segundo nombre y le busco parentesis
                     int foundParenthesis1 = fileName2.IndexOf("(");
-                    int foundParenthesis2 = fileName2.IndexOf(")");
+                    //int foundParenthesis2 = fileName2.IndexOf(")");
+                    int foundParenthesis2 = fileName2.IndexOf(".");
                     if (foundParenthesis1 != foundParenthesis2 && foundParenthesis1 >= 0)
 
                     {   //usar un nombre temporal para ver si es igual a fileName1 o no
-                        string fileName2Temp = (fileName2.Remove(foundParenthesis1 - 9, foundParenthesis2 - foundParenthesis1 + 1)).Trim();
+                        //string fileName2Temp = (fileName2.Remove(foundParenthesis1 - 9, foundParenthesis2 - foundParenthesis1 + 1)).Trim();
+                        //me comio 3 letras desde la pos 7
+
+                        string fileName2Temp = (fileName2.Remove(foundParenthesis1 -1, foundParenthesis2 - foundParenthesis1 +1 )).Trim();
+
                         if (fileName1 == fileName2Temp)
                         {
                             //resultado = "valor duplicado" : entonces creo una carpeta, y muevo al archivo 2 para ahi;
@@ -120,6 +128,14 @@ namespace PruebaArchivos4
                             File.Move(miArray[j], destFileDuplicated);
                         }
                     }
+
+
+
+
+
+
+
+
 
                 } //termina la comparación del segundo archivo y va a tomar otro.
 
