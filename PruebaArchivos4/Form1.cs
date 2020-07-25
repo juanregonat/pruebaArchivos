@@ -128,15 +128,6 @@ namespace PruebaArchivos4
                             File.Move(miArray[j], destFileDuplicated);
                         }
                     }
-
-
-
-
-
-
-
-
-
                 } //termina la comparación del segundo archivo y va a tomar otro.
 
 
